@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuktur HTML & CSS flex</title>
+    <style>
+         body {
+        font-family: sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        border: black 2px solid;
+        border-radius: 10px;
+        background-color: #ffe0e0;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .main-content {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .navigation {
+        background-color: #e0ffe0;
+        padding: 15px;
+        width: 200px;
+      }
+
+      .articles {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex-grow: 1;
+        background-color: #080808;
+      }
+
+      .article {
+        background-color: #fff0e0;
+        padding: 15px;
+      }
+
+      .footer {
+        background-color: #ffe0e0;
+        padding: 15px;
+        text-align: center;
+      }
+
+      .navigation ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .navigation li {
+        margin-bottom: 5px;
+      }
+    </style>
+</head>
+<body>
+   <div class="container">
+      <header class="header">Struktur HTML & CSS Flex</header>
+      <div class="main-content">
+        <nav class="navigation">
+          <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+          </ul>
+        </nav>
+        <div class="articles">
+          <article class="article">
+            <h3>Article 1</h3>
+            <p>Konten artikel pertama...</p>
+          </article>
+          <article class="article">
+            <h3>Article 2</h3>
+            <p>Konten artikel kedua...</p>
+          </article>
+          <article class="article">
+            <h3>Article 3</h3>
+            <p>Konten artikel ketiga...</p>
+          </article>
+        </div>
+      </div>
+      <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>
