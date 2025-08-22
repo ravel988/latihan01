@@ -9,17 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0f1115;         /* page background */
-      --panel: #1c1f26;      /* card background */
-      --text: #e6e7eb;       /* body text */
-      --outline: #353a44;    /* card outline */
-      --glow: #e11d48;       /* red glow */
+      --bg: #0f1115;
+      --panel: #1c1f26;
+      --text: #e6e7eb;
+      --outline: #353a44;
+      --glow: #e11d48; /* merah */
       --radius: 18px;
       --space: 22px;
     }
 
     * { box-sizing: border-box; }
-    html, body { height: 100%; }
     body{
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -40,41 +39,34 @@
       gap: 28px;
     }
 
-    /* HP (kurang dari 600px) jadi 1 kolom */
     @media (max-width: 600px){
       .grid{ grid-template-columns: 1fr; }
     }
 
     .card{
-      position: relative;
       background: var(--panel);
       border: 1px solid var(--outline);
       border-radius: var(--radius);
       padding: calc(var(--space) + 6px) calc(var(--space) + 8px);
       box-shadow:
-        0 1px 0 rgba(255,255,255,0.04) inset,
-        0 0 0 1px rgba(255,255,255,0.02) inset,
-        0 12px 22px rgba(0,0,0,0.55);
-      overflow: hidden;
+        0 0 15px rgba(225, 29, 72, 0.6),   /* glow merah */
+        0 0 25px rgba(225, 29, 72, 0.4),   /* glow tambahan */
+        0 0 35px rgba(225, 29, 72, 0.2);   /* glow lembut */
+      transition: box-shadow 0.3s ease;
     }
 
-    /* soft red neon glow */
-    .card::after{
-      content: "";
-      position: absolute;
-      left: 8px; right: 8px; bottom: -18px; height: 46px;
-      background: radial-gradient(60% 100% at 50% 0%, var(--glow), transparent 70%);
-      filter: blur(14px);
-      opacity: 0.8;
-      pointer-events: none;
+    /* efek hover glow lebih kuat */
+    .card:hover {
+      box-shadow:
+        0 0 20px rgba(225, 29, 72, 0.8),
+        0 0 35px rgba(225, 29, 72, 0.6),
+        0 0 50px rgba(225, 29, 72, 0.4);
     }
 
     h2{
       margin: 0 0 14px;
       font-size: clamp(28px, 4vw, 48px);
-      line-height: 1.1;
       font-weight: 800;
-      letter-spacing: 0.2px;
     }
     p{ margin: 0 0 10px; }
   </style>
@@ -84,34 +76,19 @@
     <section class="grid">
       <article class="card">
         <h2>Hello World</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cumque recusandae excepturi deleniti,
-          necessitatibus repellat ab at dicta quia debitis, illo libero, vero magni suscipit veritatis. Laboriosam illum facere earum!
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cumque recusandae excepturi deleniti.</p>
       </article>
-
       <article class="card">
         <h2>Hello World</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cumque recusandae excepturi deleniti,
-          necessitatibus repellat ab at dicta quia debitis, illo libero, vero magni suscipit veritatis. Laboriosam illum facere earum!
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cumque recusandae excepturi deleniti.</p>
       </article>
-
       <article class="card">
         <h2>Hello World</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cumque recusandae excepturi deleniti,
-          necessitatibus repellat ab at dicta quia debitis, illo libero, vero magni suscipit veritatis. Laboriosam illum facere earum!
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cumque recusandae excepturi deleniti.</p>
       </article>
-
       <article class="card">
         <h2>Hello World</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cumque recusandae excepturi deleniti,
-          necessitatibus repellat ab at dicta quia debitis, illo libero, vero magni suscipit veritatis. Laboriosam illum facere earum!
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cumque recusandae excepturi deleniti.</p>
       </article>
     </section>
   </main>
